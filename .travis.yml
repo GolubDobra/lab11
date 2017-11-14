@@ -9,7 +9,6 @@ script:
 - mkdir .config
 - echo "output=config.log" > .config/demo.cfg
 - echo "text1 text2 text3" | ../_install/bin/demo
-- test -f config.log 
 - export DEMO_OUTPUT=env.log
 - echo "text1 text2 text3" | ../_install/bin/demo
 - test -f env.log 
