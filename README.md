@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/GolubDobra/lab10.svg?branch=master)](https://travis-ci.org/GolubDobra/lab10)
-the demo application redirects data from stdin to a file **log.txt** using a package **print**.
+[![Build Status](https://travis-ci.org/GolubDobra/lab11.svg?branch=master)](https://travis-ci.org/GolubDobra/lab11)
 
 ## Laboratory work XI
 
@@ -17,7 +16,7 @@ $ open http://www.boost.org/doc/libs/1_65_0/doc/html/program_options.html
 - [X] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
-Делаем первоначальные настройки, добавляя значения переменным окружения
+#### Делаем первоначальные настройки, добавляя значения переменным окружения
 ```ShellSession
 #Устанавливаем значение переменной окружения GITHUB_USERNAME
 $ export GITHUB_USERNAME=GolubDobra
@@ -33,7 +32,7 @@ $ pushd .
 $ source scripts/activate
 ```
 
-Проводим первоначальные настройки для соединения с репозиторием 11 лабораторной работы
+#### Проводим первоначальные настройки для соединения с репозиторием 11 лабораторной работы
 ```ShellSession
 # Клонирование удаленного репозитория 10 лабораторной в локальный каталог 11 лабораторной
 $ git clone https://github.com/${GITHUB_USERNAME}/lab10 lab11
@@ -50,7 +49,7 @@ $ git remote remove origin
 # Подключаемся к удаленному репозиторию 11 лабораторной
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab11
 ```
-Подключаем пакеты boost::program_options через утилиту Hunter и редактируем demo.cpp и CMakeLists.txt
+#### Подключаем пакеты boost::program_options через утилиту Hunter и редактируем demo.cpp и CMakeLists.txt
 ```ShellSession
 # boost::program_options
 #Редактируем CMakeLists.txt
@@ -59,7 +58,7 @@ $ edit CMakeLists.txt
 $ edit sources/demo.cpp
 ```
 
-Работа с CMake
+#### Работа с CMake
 ```ShellSession
 #-H. установка директория, в который сгенерируется файл CMakeLists.txt
 #-B_build указывает директорию для собираемых файлов
@@ -890,7 +889,7 @@ Install the project...
 
 $ mkdir artifacts && cd artifacts # Создаем директорию artifacts и переходим в неё
 ```
-Создаем default.log
+#### Создаем default.log
 ```ShellSession
 # C помощью нашей программы записываем "text1 text2 text3" в default.log
 $ echo "text1 text2 text3" | ../_install/bin/demo
@@ -915,7 +914,7 @@ $ test -f config.log
 $ echo $?
 0
 ```
-Создаем env.log
+#### Создаем env.log
 ```ShellSession
 # Экспортируем глобальную переменную окружения DEMO_OUTPUT
 $ export DEMO_OUTPUT=env.log
@@ -927,7 +926,7 @@ $ test -f env.log
 $ echo $?
 0
 ```
-Создаем arg.log
+#### Создаем arg.log
 ```ShellSession
 # C помощью нашей программы записываем "text1 text2 text3" в arg.log, задавая его с помощью --output
 $ echo "text1 text2 text3" | ../_install/bin/demo --output arg.log
@@ -937,7 +936,7 @@ $ test -f arg.log
 $ echo $?
 0
 ```
-Редактируем .travis.yml
+#### Редактируем .travis.yml
 ```ShellSession
 $ cat >> .travis.yml <<EOF
 - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
@@ -956,12 +955,12 @@ $ cat >> .travis.yml <<EOF
 - test -f arg.log
 EOF
 ```
-Редактируем README.md
+#### Редактируем README.md
 ```ShellSession
 # Редактируем README.md
 gsed -i 's/lab10/lab11/g' README.md
 ```
-Отправляем последние изменения на GitHub сервер
+#### Отправляем последние изменения на GitHub сервер
 ```ShellSession
 # Добавляем все отредактированные файлы в подтвержденные
 $ git add .
@@ -990,7 +989,7 @@ remote: Resolving deltas: 100% (3/3), done.
 To https://github.com/GolubDobra/lab11
  * [new branch]      master -> master
 ```
-Работа с Travis
+#### Работа с Travis
 ```ShellSession
 # Авторизуемся своим GITHUB аккаунтом
 $ travis login --auto
